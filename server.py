@@ -20,6 +20,3 @@ def analyze_audio():
     )
     return jsonify({"detections": result})
 
-@app.get("/health")
-def health():
-    return {"status": "ok"}
