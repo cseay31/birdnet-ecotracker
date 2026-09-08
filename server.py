@@ -4,7 +4,8 @@ from birdnet_analyzer import analyze
 
 app = Flask(__name__)
 MODEL_PATH = os.environ.get("BIRDNET_MODEL", "")
-
+@app.route('/health')
+def health(): return 'ok'
 @app.post("/analyze")
 def analyze_audio():
     if "audio" not in request.files:
